@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 
 // // Function based Component
 // const Student = (props) => {
@@ -38,6 +39,16 @@ class Student extends Component{
     };
 }
 
+
+// Typechecking with PropTypes in ReactJS
+Student.propTypes = {
+    name: PropTypes.string.isRequired,
+    roll: PropTypes.number.isRequired
+};
+
+Student.defaultProps = {
+    name: "Programming"
+}
 
 export default Student;
 
