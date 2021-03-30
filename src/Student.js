@@ -27,28 +27,46 @@ import PropTypes from "prop-types";
 // };
 
 
-// Class based componnet
-class Student extends Component{
+// // Class based componnet
+// class Student extends Component{
+//     render(){
+//         return(
+//             <div>
+//                 <h1>Hello, {this.props.name}</h1>
+//                 <h2>Roll No: {this.props.roll}</h2>
+//             </div>
+//         );
+//     };
+// }
+
+
+// // Typechecking with PropTypes in ReactJS
+// Student.propTypes = {
+//     name: PropTypes.string.isRequired,
+//     roll: PropTypes.number.isRequired
+// };
+
+// Student.defaultProps = {
+//     name: "Programming"
+// }
+
+
+// // Children in JSX in React
+// Functional component
+// const Student = (props) => {
+//     return(
+//         <h1>Hello World!!! {props.children}</h1>
+//     );
+// };
+
+// Class based Component
+class Student extends Component {
     render(){
         return(
-            <div>
-                <h1>Hello, {this.props.name}</h1>
-                <h2>Roll No: {this.props.roll}</h2>
-            </div>
-        );
+            <h1>Hello Programming!!! {this.props.children}</h1>
+        )
     };
-}
-
-
-// Typechecking with PropTypes in ReactJS
-Student.propTypes = {
-    name: PropTypes.string.isRequired,
-    roll: PropTypes.number.isRequired
 };
-
-Student.defaultProps = {
-    name: "Programming"
-}
 
 export default Student;
 

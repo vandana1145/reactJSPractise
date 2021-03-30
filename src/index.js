@@ -1,7 +1,8 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import Student from "./Student";
+
 // import React from 'react' for creating react component line React.create
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Student from './Student';
 //import el from './App';
 // import reportWebVitals from './reportWebVitals';
 
@@ -20,5 +21,11 @@ import Student from './Student';
 //ReactDOM.render(<App/>, document.getElementById("root"));
 
 // Rendering element
-ReactDOM.render(<Student roll={1} />, 
-                document.getElementById("root"));
+// ReactDOM.render(<Student roll={1} />, 
+//                 document.getElementById("root"));
+
+// Rendering Component
+// Inside the Student component. we can pass child component, which can be dynamically called within the props in Student.js.
+// ReactDOM.render(<Student>I am the react child</Student>, document.getElementById("root"));
+
+ReactDOM.render(<Student>I am the {100+1}th child of react!</Student>, document.getElementById("root"));
