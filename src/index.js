@@ -28,4 +28,10 @@ import Student from "./Student";
 // Inside the Student component. we can pass child component, which can be dynamically called within the props in Student.js.
 // ReactDOM.render(<Student>I am the react child</Student>, document.getElementById("root"));
 
-ReactDOM.render(<Student>I am the {100+1}th child of react!</Student>, document.getElementById("root"));
+//ReactDOM.render(<Student>I am the {100+1}th child of react!</Student>, document.getElementById("root"));
+
+// while calling child element inside the props object
+// ReactDOM.render(<Student>Programming</Student>, document.getElementById("root"));
+
+// while treating props as state in order to dynamically modify it inside the component
+ReactDOM.render(<Student sub="ReactJS" />, document.getElementById("root"));
