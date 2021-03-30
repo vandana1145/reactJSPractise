@@ -1,6 +1,8 @@
+// import React from 'react' for creating react component line React.create
 import React from 'react';
 import ReactDOM from 'react-dom';
-import el from './App';
+import Student from './Student';
+//import el from './App';
 // import reportWebVitals from './reportWebVitals';
 
 // ReactDOM.render(
@@ -18,4 +20,5 @@ import el from './App';
 //ReactDOM.render(<App/>, document.getElementById("root"));
 
 // Rendering element
-ReactDOM.render(el, document.getElementById("root"));
+ReactDOM.render(<Student name="Meera" roll={0+1} />, 
+                document.getElementById("root"));
