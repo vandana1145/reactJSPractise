@@ -162,38 +162,71 @@ import { render } from "react-dom";
 
 
 // Update state uisng setState method; only valid for class based component
-class Student extends Component {
-// Student is the sub-class or child class of Componenet class. Subclass has the responsibility to 
-// call all the props of the parent class which is being called inside the constructor using the super(props) method.
-    constructor(props){
-        super(props);
-        this.state = {
-            name: "World of",
-            sub: this.props.sub
-        };
+// class Student extends Component {
+// // Student is the sub-class or child class of Componenet class. Subclass has the responsibility to 
+// // call all the props of the parent class which is being called inside the constructor using the super(props) method.
+//     constructor(props){
+//         super(props);
+//         this.state = {
+//             name: "World of",
+//             sub: this.props.sub
+//         };
+//     };
+
+//     handleClick = () => {
+//         // type 1 for setState
+//         // this.setState({name:"programming of", sub:"reactJS"})
+//         // console.log("Button Clicked!", this)
+        
+//         // type 2 for setState
+//         this.setState((state, props) => {
+//             console.log(this.state.name, this.state.sub)
+//             console.log(props.sub)
+//         })
+//     }
+
+//     render() {
+//         return(
+//             <div>
+//                 <h1>Hey Programmers!</h1>
+//                 <h2>Welcome to the {this.state.name} {this.state.sub}</h2>
+//                 <button onClick={this.handleClick}>Click me</button>
+//             </div>
+//         )
+//     }
+// }
+
+
+// Passing arguments to the event handlers
+class Student extends Component{
+    // state without constructor or state props
+    state = {
+        id: 2,
+        name: "Programmers :)"
     };
 
-    handleClick = () => {
-        // type 1 for setState
-        // this.setState({name:"programming of", sub:"reactJS"})
-        // console.log("Button Clicked!", this)
-        
-        // type 2 for setState
-        this.setState((state, props) => {
-            console.log(this.state.name, this.state.sub)
-            console.log(props.sub)
-        })
-    }
+    handleClick = (id,word, e) => {
+        console.log("Button Clicked!")
+        console.log(id)
+        console.log(word)
+        console.log(e)
+    };
+
+    // In order to pass arguments to event handlers, we can take help of a separate helper function just to pass argument
+    // handleClickArg = (e) => {
+    //     this.handleClick(this.state.id,"World", e);
+    // }
 
     render() {
         return(
             <div>
-                <h1>Hey Programmers!</h1>
-                <h2>Welcome to the {this.state.name} {this.state.sub}</h2>
-                <button onClick={this.handleClick}>Click me</button>
+                <h1>Hello {this.state.name}</h1>
+                {/* Another method to pass arguments to the event handlers is by passing the arrow function directly inside the onClick method as an anonymous function. */}
+                <button onClick={e => {this.handleClick(this.state.id, "World", e)}}>Delete</button>
+                {/* <button onClick={this.handleClickArg}>Delete</button> */}
             </div>
         )
-    }
-}
+    };
+} 
 
 export default Student;
