@@ -34,6 +34,6 @@ import Student from "./Student";
 // ReactDOM.render(<Student>Programming</Student>, document.getElementById("root"));
 
 // while treating props as state in order to dynamically modify it inside the component
-ReactDOM.render(<Student sub="ReactJS" />, document.getElementById("root"));
+ReactDOM.render(<Student sub="JavaScript" />, document.getElementById("root"));
 
 //ReactDOM.render(<Student />, document.getElementById("root"));

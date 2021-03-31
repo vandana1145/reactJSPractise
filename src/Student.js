@@ -146,21 +146,54 @@ import { render } from "react-dom";
 // }
 
 // Event handling in functional component
-function Student(props){
-    function handleClick(e){
-        //e.preventDefault();//calling explicitely to prevent the autoclick event in the anchor tag
-        console.log("Button Clicked inside functional component.")
+// function Student(props){
+//     function handleClick(e){
+//         //e.preventDefault();//calling explicitely to prevent the autoclick event in the anchor tag
+//         console.log("Button Clicked inside functional component.")
+//     }
+//     return(
+//         <div>
+//             <h1>Hello {props.sub} World!</h1>
+//             {/*<a href="https://reactjs.org" onClick={handleClick}>Click me</a>*/}
+//             <button onClick={handleClick}>Click me</button>
+//         </div>
+//     )
+// }
+
+
+// Update state uisng setState method; only valid for class based component
+class Student extends Component {
+// Student is the sub-class or child class of Componenet class. Subclass has the responsibility to 
+// call all the props of the parent class which is being called inside the constructor using the super(props) method.
+    constructor(props){
+        super(props);
+        this.state = {
+            name: "World of",
+            sub: this.props.sub
+        };
+    };
+
+    handleClick = () => {
+        // type 1 for setState
+        // this.setState({name:"programming of", sub:"reactJS"})
+        // console.log("Button Clicked!", this)
+        
+        // type 2 for setState
+        this.setState((state, props) => {
+            console.log(this.state.name, this.state.sub)
+            console.log(props.sub)
+        })
     }
-    return(
-        <div>
-            <h1>Hello {props.sub} World!</h1>
-            {/*<a href="https://reactjs.org" onClick={handleClick}>Click me</a>*/}
-            <button onClick={handleClick}>Click me</button>
-        </div>
-    )
+
+    render() {
+        return(
+            <div>
+                <h1>Hey Programmers!</h1>
+                <h2>Welcome to the {this.state.name} {this.state.sub}</h2>
+                <button onClick={this.handleClick}>Click me</button>
+            </div>
+        )
+    }
 }
 
 export default Student;
-
-
-
